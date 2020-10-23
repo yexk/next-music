@@ -1,0 +1,11 @@
+{
+  "name": "music-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "青木",
+  "license": "MIT",
+  "dependencies": {
+    "NeteaseCloudMusicApi": "^3.43.0",
+    "lodash": "^4.17.20"
+  }
+}

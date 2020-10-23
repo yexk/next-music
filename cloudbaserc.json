@@ -1,0 +1,51 @@
+{
+  "envId": "qingmu-6gon3sx0b82bd92c",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "framework": {
+    "name": "nuxt-ssr",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-nuxt",
+        "inputs": {
+          "path": "/"
+        }
+      },
+      "server": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functionRootPath": "cloudfunctions",
+          "functions": [
+            {
+              "name": "nuxt-ssr-echo",
+              "timeout": 5,
+              "envVariables": {},
+              "runtime": "Nodejs10.15",
+              "memory": 128
+            }
+          ],
+          "servicePaths": {
+            "nuxt-ssr-echo": "/backend"
+          }
+        }
+      },
+      "music": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functionRootPath": "cloudfunctions",
+          "functions": [
+            {
+              "name": "music-api",
+              "timeout": 5,
+              "envVariables": {},
+              "runtime": "Nodejs10.15",
+              "memory": 256
+            }
+          ],
+          "servicePaths": {
+            "music-api": "/backend_music"
+          }
+        }
+      }
+    }
+  }
+}
